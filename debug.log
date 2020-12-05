@@ -1,0 +1,7 @@
+[1205/165453.011:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[1205/235447.495:ERROR:crashpad_client_win.cc(132)] crash server failed to launch, self-terminating
+[1205/235929.203:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[1206/001830.679:ERROR:crashpad_client_win.cc(132)] crash server failed to launch, self-terminating
+[1206/002256.019:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[1206/002733.316:ERROR:crashpad_client_win.cc(132)] crash server failed to launch, self-terminating
+[1206/002910.410:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: The pipe has been ended. (0x6D)

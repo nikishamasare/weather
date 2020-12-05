@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row tiles bg-black" *ngFor="let weather of weatherData;let i = index"
+        (click)="getForecast(weather.name, i)">
+        <div class="col-md-4">
+            <h4>{{weather.name}}, {{weather.sys.country}}</h4>
+            <h5>{{weather.main.temp}}<sup>o</sup> F</h5>
+        </div>
+        <div class="col-md-4">
+            <div><i>Sunrise: {{weather.sys.sunrise | moment}}</i></div>
+            <div><i>Sunset: {{weather.sys.sunset | moment}}</i></div>
+        </div>
+
+        <div class="col-md-3">
+            <figure>
+                <img class="cloud-img" src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png"
+                    alt="{{weather.weather[0].icon}}.png">
+                <figcaption class="text-capitalize">{{weather.weather[0].description}}</figcaption>
+            </figure>
+        </div>
+        <div class="col tiles" *ngIf ="showForecastList[i]">
+            <table class="table">
+                <tbody>
+                    <ng-container *ngFor="let forecast of forecastData">
+                        <tr class="table-danger">
+                            <td>{{forecast?.dt_txt | date: 'medium'}}</td>
+                            <td>SeaLevel : {{forecast?.main.sea_level}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   
+</div>
