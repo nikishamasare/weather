@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './component/weather/weather.component';
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { MomentPipe } from './shared/pipe/moment.pipe';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { MomentPipe } from './shared/pipe/moment.pipe';
     MomentPipe
   ],
   imports: [
-    BrowserModule, NgbAccordionModule, HttpClientModule
+    BrowserModule, ChartsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

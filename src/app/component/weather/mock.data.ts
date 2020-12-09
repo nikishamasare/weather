@@ -1,6 +1,10 @@
 import { Observable, of } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 export class MockData  {
+  private baseurl = environment.baseUrl;
+  private appid = environment.APP_ID;
+  private europianCitiesId = [2643743, 3117735, 2950159, 745042, 2988507];
   static getWeatherReport(): Observable<any> {
     return of(
       {

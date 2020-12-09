@@ -16,12 +16,12 @@ export class WeatherService {
 
   getWeatherReport(): Observable<any> {
     const citiesID = this.europianCitiesId.toString();
-    const url = `${this.baseurl}/group?id=${citiesID}&units=imperial&appid=${this.appid}`;
+    const url = `${this.baseurl}/group?id=${citiesID}&units=metric&appid=${this.appid}`;
     return this.restService.get(url);
   }
 
   getForecast(cityname): Observable<any> {
-    const url = `${this.baseurl}/forecast?q=${cityname}&cnt=5&units=imperial&appid=${this.appid}`;
+    const url = `${this.baseurl}/forecast?q=${cityname}&units=imperial&appid=${this.appid}`;
     return this.restService.get(url);
   }
 }
