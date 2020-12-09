@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WeatherService } from 'src/app/service/weather.service';
 import { MomentPipe } from 'src/app/shared/pipe/moment.pipe';
 import { MockData } from './mock.data';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { WeatherComponent } from './weather.component';
 
 describe('WeatherComponent', () => {
@@ -13,7 +13,8 @@ describe('WeatherComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ WeatherComponent, MomentPipe ],
-      providers: [ { provide: WeatherService, useValue: MockData } ]
+      providers: [ { provide: WeatherService, useValue: MockData } ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });
@@ -38,7 +39,7 @@ describe('WeatherComponent', () => {
   });
 
   it('pipe => it should transform unix.utc date format to Date', () => {
-    expect(pipe.transform('1607154589')).toBe('1:19 PM');
+    expect(pipe.transform('1607154589')).toBe('7:49 AM');
     // Dec 5, 2020, 9:00:00 PM
   });
 });
